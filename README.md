@@ -1,60 +1,106 @@
-# NoteNest
+# 📝 NoteNest — минималистичное приложение для заметок
 
-A minimal note-taking application built with **Nuxt 3** and **Prisma**. Users can register, log in and manage simple text notes. Notes are grouped by the day they were last updated (Today, Yesterday or the previous 30 days).
+> Полноценный проект на основе **Nuxt 3** и **Prisma**, с авторизацией и хранением заметок.
 
-## Features
+---
 
-- **User registration and login** using email and password.
-- **JWT based authentication**. The token is stored in the `NoteNestJWT` cookie.
-- **Create and edit notes** which are persisted in a MySQL database via Prisma.
-- Responsive UI styled with **Tailwind CSS**.
+## 📋 Описание проекта
 
-## Project Structure
+**NoteNest** — это минималистичное приложение для создания и управления заметками. Пользователи могут регистрироваться, входить в аккаунт и управлять своими записями.  
+Заметки группируются по дате последнего обновления: **Сегодня**, **Вчера** и последние 30 дней.
 
-- `pages/` – login, registration and the main notes page.
-- `server/api/` – API endpoints for user and note management.
-- `middleware/auth.js` – redirects unauthenticated users to the registration page.
-- `prisma/` – database schema and migrations.
+Проект реализует базовую, но качественно выполненную структуру с полным циклом — от фронтенда до серверной части и работы с базой данных.
 
-## Setup
+---
 
-1. Install dependencies:
-   ```bash
-   npm install
-   # or
-   pnpm install
-   ```
-2. Create an `.env` file with at least the following variables:
-   ```env
-   DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
-   JWT_SECRET="your-secret"
-   ```
-3. Run Prisma migrations locally:
-   ```bash
-   npx prisma migrate dev
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   pnpm dev
-   ```
+## 🔥 Основной функционал
 
-The app will be available at `http://localhost:3000`.
+- 🔐 Регистрация и авторизация пользователей по email и паролю.
+- 🔑 Аутентификация через **JWT токены**, хранящиеся в cookie `NoteNestJWT`.
+- 📝 Создание и редактирование текстовых заметок.
+- 💾 Хранение данных в базе **MySQL** через **Prisma ORM**.
+- 🎨 Отзывчивый современный интерфейс с использованием **Tailwind CSS**.
 
-## Production
+---
 
-Build the app and preview the production build:
+## 🗂 Структура проекта
+
+- `pages/` — страницы регистрации, авторизации и работы с заметками.
+- `server/api/` — API эндпоинты для работы с пользователями и заметками.
+- `middleware/auth.js` — промежуточный слой для проверки авторизации (перенаправление на регистрацию, если пользователь не авторизован).
+- `prisma/` — описание схемы базы данных и миграции.
+
+---
+
+## ⚙️ Установка и запуск проекта
+
+1️⃣ Установить зависимости:
+```bash
+npm install
+# или
+pnpm install
+```
+
+2️⃣ Создать файл окружения `.env` и добавить переменные:
+```env
+DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
+JWT_SECRET="your-secret"
+```
+
+3️⃣ Выполнить миграции базы данных:
+```bash
+npx prisma migrate dev
+```
+
+4️⃣ Запустить проект в режиме разработки:
+```bash
+npm run dev
+# или
+pnpm dev
+```
+
+После этого приложение будет доступно по адресу:  
+**http://localhost:3000**
+
+---
+
+## 🚀 Запуск в production-среде
+
+1️⃣ Собрать проект:
 ```bash
 npm run build
 npm run preview
 ```
 
-If deploying to an environment without development tools, run the migrations with:
+2️⃣ Выполнить миграции для production:
 ```bash
 npx prisma migrate deploy
 ```
 
 ---
 
-This project was bootstrapped with Nuxt 3. Refer to the [Nuxt documentation](https://nuxt.com/docs) for additional configuration options.
+## 🛠 Стек технологий
+
+- **Frontend:** Nuxt 3, Vue.js, Tailwind CSS
+- **Backend:** Nuxt server routes (API на серверной части)
+- **База данных:** MySQL через Prisma ORM
+- **Аутентификация:** JWT
+
+---
+
+## 🎯 Для кого интересен этот проект
+
+- 🎓 Для работодателей: демонстрация full-stack навыков на современном стеке (Nuxt 3 + Prisma)
+- 🔧 Для стартапов: рабочая архитектура, легко масштабируемая под задачи по управлению данными
+- 🧩 Для портфолио: проект демонстрирует понимание работы с авторизацией, API, базами данных и интерфейсом
+
+---
+
+## 📚 Дополнительные ресурсы
+
+- Документация по **[Nuxt 3](https://nuxt.com/docs)**
+- Документация по **[Prisma](https://www.prisma.io/docs/)**
+
+---
+
+💡 *Проект полностью разработан самостоятельно в учебно-практических целях.*
